@@ -10,11 +10,18 @@
     color: var(--main-color);
 }
 
+.operator-button {
+    background-color: #202124;
+}
+.operator-button:hover {
+    background-color: #292b2e;
+}
+
 .enter-button {
     background-color: var(--main-color);
 }
 .enter-button:hover {
-    background-color: #ec1141;
+    background-color: #f31847;
 }
 
 button {
@@ -22,12 +29,12 @@ button {
     border: 1px solid transparent;
     font-size: 20px;
     font-weight: 400;
-    background-color: #202124;
+    background-color: #23252b;
     cursor: pointer;
     transition: border-color 0.25s;
     width: 75px;
-    height: 75px;
+    height: 65px;
 }
 button:hover {
-    background-color: #292b2e;
+    background-color: #2d2e35;
 }
