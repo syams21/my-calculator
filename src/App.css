@@ -1,0 +1,33 @@
+.main-wrapper {
+    background-color: #1a1b1d;
+}
+
+.display {
+    background-color: #202124;
+}
+
+.clear-button {
+    color: var(--main-color);
+}
+
+.enter-button {
+    background-color: var(--main-color);
+}
+.enter-button:hover {
+    background-color: #ec1141;
+}
+
+button {
+    border-radius: 3px;
+    border: 1px solid transparent;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #202124;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    width: 75px;
+    height: 75px;
+}
+button:hover {
+    background-color: #292b2e;
+}
