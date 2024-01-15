@@ -7,6 +7,10 @@ function App() {
 
     const operators = ['/', '*', '+', '-', '.', '%'];
 
+    const isOperator = (value) => {
+        return operators.includes(value);
+    }
+
     const updateCalc = (value) => {
         if (
             (operators.includes(value) && calc === '') ||
@@ -15,10 +19,25 @@ function App() {
             return;
         }
 
-        setCalc(calc + value);
-
         if (!operators.includes(value)) {
             setResult(eval(calc + value).toString());
+        }
+
+        if (value === '*') {
+            setCalc(calc + '×');
+        } else {
+            setCalc(calc + value);
+        }
+
+        if (value === '%') {
+            setCalc((eval(calc) / 100).toString());
+            setResult("");
+        } else {
+            setCalc(calc + value);
+    
+            if (!operators.includes(value)) {
+                setResult(eval(calc + value).toString());
+            }
         }
         
     }
@@ -46,7 +65,19 @@ function App() {
         <div className='main-wrapper p-3 rounded'>
             <h2 className='text-light mt-2'>Calculator</h2>
             <div className='display text-light text-end mb-4 mt-3 p-3'>
-                {calc || ""} <br />
+                <div className="display-input d-flex justify-content-end">
+                    {calc
+                        ? calc.split(/([+\-*/%])/).map((part, index) => (
+                            isOperator(part) ? (
+                                <span key={index} className="operator">{part === '*' ? '×' : part}</span>
+                            ) : (
+                                <span key={index}>{part}</span>
+                            )
+                        )
+                    ) : ""}
+                    <br />
+                </div>
+
                 <div>
                     {result ? <span>{result}</span> : (<div>&nbsp;</div>)}
                 </div>
@@ -64,7 +95,7 @@ function App() {
                     <button onClick={() => updateCalc('7')}>7</button>
                     <button onClick={() => updateCalc('8')}>8</button>
                     <button onClick={() => updateCalc('9')}>9</button>
-                    <button onClick={() => updateCalc('*')} className='operator-button'>X</button>
+                    <button onClick={() => updateCalc('*')} className='operator-button'>×</button>
                 </div>
 
                 <div className='col d-flex gap-1'>

@@ -6,6 +6,12 @@
     background-color: #202124;
 }
 
+.display-input {
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .clear-button {
     color: var(--main-color);
 }
@@ -22,6 +28,10 @@
 }
 .enter-button:hover {
     background-color: #f31847;
+}
+
+.operator {
+    color: #838282;
 }
 
 button {
