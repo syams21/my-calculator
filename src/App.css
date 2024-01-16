@@ -39,7 +39,8 @@ button {
     border: 1px solid transparent;
     font-size: 20px;
     font-weight: 400;
-    background-color: #23252b;
+    background-color: #282b31;
+    color: var(--text-color);
     cursor: pointer;
     transition: border-color 0.25s;
     width: 75px;
